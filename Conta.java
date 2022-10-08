@@ -6,15 +6,12 @@ public class Conta {
     private double saldo = 0.0;
 
     public Conta(Pessoa pessoa){
-        this.numeroConta = contadorDeConta;
+        this.numeroConta = Conta.contadorDeConta;
         this.pessoa = pessoa;
-        contadorDeConta += 1;
+        Conta.contadorDeConta += 1;
     }
     public int getNumeroConta() {
         return numeroConta;
-    }
-    public void setNumeroConta(int numeroConta) {
-        this.numeroConta = numeroConta;
     }
     public Pessoa getPessoa() {
         return pessoa;
@@ -32,7 +29,7 @@ public class Conta {
     public String toString() {
         return "\nNúmero da conta : " + this.getNumeroConta() +
                 "\nNome: " + this.pessoa.getNome() +
-                "\nCPF: " + this.pessoa.getCPF() +
+                "\nCPF: " + this.pessoa.getCpf() +
                 "\nEmail: " + this.pessoa.getEmail() +
                 "\nSaldo: " + utils.doubleToString(this.getSaldo()) +
                 "\n";

@@ -55,14 +55,17 @@ public class AgenciaBancaria {
     }
 
     public static void criarConta() {
-        System.out.println("\nNome: ");
-        String nome = input.nextLine();
+        System.out.println("Nome: ");
+        String nome = input.next();
 
         System.out.println("\nCPF: ");
         String cpf = input.next();
 
         System.out.println("\nEmail: ");
         String email = input.next();
+
+        System.out.println("\nNumero da conta: ");
+        int numeroConta = input.nextInt();
 
         Pessoa pessoa = new Pessoa(nome, cpf, email);
 
@@ -72,7 +75,6 @@ public class AgenciaBancaria {
         System.out.println("Sua conta foi criada com sucesso!");
 
         operacoes();
-
     }
 
     private static Conta encontrarConta(int numeroConta) {
@@ -90,14 +92,13 @@ public class AgenciaBancaria {
     public static void depositar(){
         System.out.println("Número da conta: ");
         int numeroConta = input.nextInt();
-
         Conta conta = encontrarConta(numeroConta);
 
         if(conta != null) {
             System.out.println("Qual valor deseja depositar? ");
             double valorDeposito = input.nextDouble();
+
             conta.depositar(valorDeposito);
-            System.out.println("Valor depositado com sucesso! ");
         }else{
             System.out.println("Conta não encontrada! ");
         }
@@ -113,8 +114,9 @@ public class AgenciaBancaria {
         if(conta != null) {
             System.out.println("Qual valor deseja sacar? ");
             double valorSaque = input.nextDouble();
+
             conta.sacar(valorSaque);
-           // System.out.println("Valor sacado com sucesso! ");
+            System.out.println("Valor sacado com sucesso! ");
         }else{
             System.out.println("Conta não encontrada! ");
         }
@@ -158,5 +160,4 @@ public class AgenciaBancaria {
         }
         operacoes();
     }
-
 }

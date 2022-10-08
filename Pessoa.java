@@ -1,15 +1,29 @@
+import java.util.Date;
+
+
+
+
 public class Pessoa {
 
     private static int counter = 1;
+
+    private int numeroPessoa;
     private String nome;
     private String cpf;
     private String email;
+    private Date accountCreationDate;
 
     public Pessoa(String nome, String cpf, String email){
+        this.numeroPessoa = Pessoa.counter;
         this.nome = nome;
         this.cpf = cpf;
         this.email = email;
+        this.accountCreationDate = new Date();
         counter +=1;
+    }
+
+    public int getNumeroPessoa(){
+        return this.getNumeroPessoa();
     }
     public String getNome(){
         return nome;
@@ -17,11 +31,11 @@ public class Pessoa {
     public void setNome(String nome){
         this.nome = nome;
     }
-    public String getCPF(){
+    public String getCpf(){
         return cpf;
     }
-    public void setCPF(String cPF){
-        cpf = cpf;
+    public void setCPF(String cpf){
+        this.cpf = cpf;
     }
     public String getEmail(){
         return email;
@@ -29,10 +43,14 @@ public class Pessoa {
     public void setEmail(String email) {
         this.email = email;
     }
+    public Date getAccountCreationDate(){
+        return this.accountCreationDate;
+    }
     public String toString(){
         return "\nNome: " + this.getNome() +
-                "\nCPF: " + this.getCPF() +
-                "\nEmail " + this.getEmail();
+                "\nCPF: " + this.getCpf() +
+                "\nEmail " + this.getEmail() +
+                "\nAccount Creation Date: " + utils.dateToString(this.getAccountCreationDate());
     }
 
 }
