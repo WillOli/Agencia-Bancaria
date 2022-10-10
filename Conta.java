@@ -1,3 +1,5 @@
+import javax.swing.*;
+
 public class Conta {
     private static int contadorDeConta = 1;
 
@@ -38,27 +40,29 @@ public class Conta {
     public void depositar(double valor) {
         if(valor > 0) {
             setSaldo(getSaldo() + valor);
-            System.out.println("Seu depósito foi realizado com sucesso!");
+            JOptionPane.showMessageDialog(null, "Seu depósito foi realizado com sucesso!");
         }else{
-            System.out.println("Não foi possível realizar o depósito!");
+            JOptionPane.showMessageDialog(null, "Não foi possível realizar o depósito!");
         }
     }
 
     public void sacar(double valor) {
         if(valor > 0 && this.getSaldo() >= valor) {
             setSaldo(getSaldo() - valor);
-            System.out.println("Saque realizado com sucesso!");
+
+            JOptionPane.showMessageDialog(null, "Saque realizado com sucesso!");
         }else{
-            System.out.println("Não foi possível realizar o saque!");
+            JOptionPane.showMessageDialog(null, "Não foi possível realizar o saque!");
         }
     }
     public void transferir(Conta contaParadeposito, double valor) {
         if(valor > 0 && this.getSaldo() >= valor){
             setSaldo(getSaldo() - valor);
             contaParadeposito.saldo = contaParadeposito.getSaldo() + valor;
-            System.out.println("Trânsferencia realizada com sucesso!");
+
+            JOptionPane.showMessageDialog(null, "Trânsferência realizada com sucesso!");
         }else{
-            System.out.println("Não foi possível realizar a transferência!");
+            JOptionPane.showMessageDialog(null, "Não foi possível realizar a transferência!");
         }
     }
 }

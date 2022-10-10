@@ -13,6 +13,10 @@ public class Pessoa {
     private String email;
     private Date accountCreationDate;
 
+    public Pessoa() {
+
+    }
+
     public Pessoa(String nome, String cpf, String email){
         this.numeroPessoa = Pessoa.counter;
         this.nome = nome;
